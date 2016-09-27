@@ -39,6 +39,6 @@ var request = new XMLHttpRequest();
         }
     };
     // Make the request:
-    request.open('GET','http://http://niranjanagithub.imad.hasura-app.io/counter',true);
+    request.open('GET','http://niranjanagithub.imad.hasura-app.io/counter',true);
     request.send(null);
 };
