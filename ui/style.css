@@ -1,22 +1,38 @@
-body {
+body 
+{
     font-family: sans-serif;
     background-color: lightgrey;
     margin-top: 75px;
 }
 
-.center {
+.center 
+{
     text-align: center;
 }
 
-.text-big {
+.text-big 
+{
     font-size: 300%;
 }
 
-.bold {
+.bold 
+{
     font-weight: bold;
 }
 
-.img-medium {
+.img-medium 
+{
     height: 200px;
+}
+
+.container
+{
+    max-width: 750px;
+    margin: 0 auto;
+    color: blue;
+    font-family: sans-serif;
+    padding-top: 80px;
+    padding-left:20px;
+    padding-right:20px;
 }
 
