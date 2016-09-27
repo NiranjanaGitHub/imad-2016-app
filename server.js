@@ -5,22 +5,71 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var ArticleOne =
+var articles = 
 {
-  title: 'Article One Web Page',
-  heading: 'Article One',
-  date: 'Sept 5, 2016',
-  content: `
-            <p> This is the contents of Article One. This is the contents of Article One. 
-                This is the contents of Article One. This is the contents of Article One.  
-                This is the contents of Article One. This is the contents of Article One. 
-                This is the contents of Article One. This is the contents of Article One. 
-                This is the contents of Article One. This is the contents of Article One. 
-            </p>
+    'article-one':
+    {
+    title: 'Article One Web Page',
+    heading: 'Article One',
+    date: 'Sept 5, 2016',
+    content: `
+                <p> This is the contents of Article One. This is the contents of Article One. 
+                    This is the contents of Article One. This is the contents of Article One.  
+                    This is the contents of Article One. This is the contents of Article One. 
+                    This is the contents of Article One. This is the contents of Article One. 
+                    This is the contents of Article One. This is the contents of Article One. 
+                </p>
             `
+    },
+    'article-two':
+    {
+    title: 'Article Two Web Page',
+    heading: 'Article Two',
+    date: 'Sept 10, 2016',
+    content: `
+                <p> This is the contents of Article Two. This is the contents of Article Two. 
+                    This is the contents of Article Two. This is the contents of Article Two. 
+                    This is the contents of Article Two. This is the contents of Article Two. 
+                    This is the contents of Article Two. This is the contents of Article Two. 
+                    This is the contents of Article Two. This is the contents of Article Two. 
+                </p>
+                <p> This is the contents of Article Two. This is the contents of Article Two. 
+                    This is the contents of Article Two. This is the contents of Article Two. 
+                    This is the contents of Article Two. This is the contents of Article Two. 
+                    This is the contents of Article Two. This is the contents of Article Two. 
+                    This is the contents of Article Two. This is the contents of Article Two. 
+                </p>
+            `
+    },
+    'article-three':
+    {
+    title: 'Article Three Web Page',
+    heading: 'Article Three',
+    date: 'Sept 15, 2016',
+    content: `
+                <p> This is the contents of Article Three. This is the contents of Article Three. 
+                    This is the contents of Article Three. This is the contents of Article Three. 
+                    This is the contents of Article Three. This is the contents of Article Three. 
+                    This is the contents of Article Three. This is the contents of Article Three. 
+                    This is the contents of Article Three. This is the contents of Article Three. 
+                </p>
+                <p> This is the contents of Article Three. This is the contents of Article Three. 
+                    This is the contents of Article Three. This is the contents of Article Three. 
+                    This is the contents of Article Three. This is the contents of Article Three. 
+                    This is the contents of Article Three. This is the contents of Article Three. 
+                    This is the contents of Article Three. This is the contents of Article Three. 
+                </p>
+                <p> This is the contents of Article Three. This is the contents of Article Three. 
+                    This is the contents of Article Three. This is the contents of Article Three. 
+                    This is the contents of Article Three. This is the contents of Article Three. 
+                    This is the contents of Article Three. This is the contents of Article Three. 
+                    This is the contents of Article Three. This is the contents of Article Three. 
+                </p>
+            `
+    }
 };
 
-function CreateTemplate (data) 
+function createTemplate (data) 
 {
 var title = data.title;
 var date = data.date;
@@ -62,8 +111,9 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function (req,res) {
-    res.send(CreateTemplate(ArticleOne));
+app.get('/:articleName', function (req,res) {
+    var articleName = req.params.articleName;
+    res.send(createTemplate(articles[articleName]));
 }); 
 
 app.get('/article-two', function (req,res) {
