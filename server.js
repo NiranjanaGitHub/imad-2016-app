@@ -20,6 +20,12 @@ var articles =
                     This is the contents of Article One. This is the contents of Article One. 
                 </p>
             `
+    footer: 
+            <ul>
+            <input type="text" id="name" placeholder="name"></input>
+            <input type="submit" id="submit_btn" value="Submit"></input>
+            <ul id="namelist">
+            </ul>
     },
     'article-two':
     {
@@ -100,6 +106,9 @@ var HtmlTemplate = `
             <div>
                 ${content}
             </div>
+            <div>
+                ${footer}
+            </div>    
         </div>
     </body>
 </html>
