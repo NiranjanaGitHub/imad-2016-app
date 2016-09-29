@@ -131,16 +131,16 @@ app.get('/:articleName', function (req,res) {
     res.send(createTemplate(articles[articleName]));
 }); 
 
-var names = [];
+//var names = [];
 // Get the name: PARAMS
 //app.get('/submit-name/:name',function(req,res) {
 //var name = req.params.name;
 //Get the name: QUERY parameter string
-app.get('/submit-name',function(req,res) {         //URL: /submit-name?name=xxxxx
-var name = req.query.name;
-names.push(name);
-res.send(JSON.stringify(names));                  // Convert array to string.
-});
+//app.get('/submit-name',function(req,res) {         //URL: /submit-name?name=xxxxx
+//var name = req.query.name;
+//names.push(name);
+//res.send(JSON.stringify(names));                  // Convert array to string.
+//});
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
