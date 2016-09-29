@@ -117,6 +117,19 @@ app.get('/counter',function(req,res) {
  res.send(counter.toString());
 });
 
+//Type Comment
+var names = [];
+// Get the name: PARAMS
+//app.get('/submit-name/:name',function(req,res) {
+//var name = req.params.name;
+//Get the name: QUERY parameter string
+app.get('/comment-name',function(req,res) {         //URL: /submit-name?name=xxxxx
+var name = req.query.name;
+names.push(name);
+res.send(JSON.stringify(names));                  // Convert array to string.
+});
+
+// Type Name
 var names = [];
 // Get the name: PARAMS
 //app.get('/submit-name/:name',function(req,res) {
