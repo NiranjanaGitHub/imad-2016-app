@@ -45,7 +45,7 @@ var request = new XMLHttpRequest();
 };
 
 // Enter the Name:
-var nameInput = docuemnt.getElementById('name');
+var nameInput = document.getElementById('name');
 var name = nameInput.value;
 var submit = document.getElementById('submit_btn');
 submit.onclick = function() {
