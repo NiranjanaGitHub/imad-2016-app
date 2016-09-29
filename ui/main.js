@@ -80,3 +80,5 @@ var name = nameInput.value;
 request.open('GET','http://niranjanagithub.imad.hasura-app.io/submit-name?name=' + name,true);
     request.send(null);
 };
+
+// Add Comment box in the article page
