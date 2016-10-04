@@ -107,10 +107,6 @@ var HtmlTemplate = `
 return HtmlTemplate;
 }
 
-app.get('/Aboutme-App/index.html', function (req, res) {
-  res.sendFile(path.join(__dirname, 'Aboutme-App', 'index.html'));
-});
-
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
