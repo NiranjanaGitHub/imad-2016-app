@@ -13,8 +13,8 @@ app.get('/Aboutme-App/Intro', function (req, res) {
   res.send('Introducing myself');
 });
 
-app.get('/Aboutme-App/Intrests', function (req, res) {
-  res.send('My Intrests & Hobbies');
+app.get('/Aboutme-App/Interests', function (req, res) {
+  res.send('My Interests & Hobbies');
 });
 
 app.get('/Aboutme-App/Plans', function (req, res) {
