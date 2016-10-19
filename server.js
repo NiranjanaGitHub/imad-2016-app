@@ -9,6 +9,18 @@ app.get('/Aboutme-App/index.html', function (req, res) {
   res.sendFile(path.join(__dirname, 'Aboutme-App', 'index.html'));
 });
 
+app.get('/Aboutme-App/Intro', function (req, res) {
+  res.send('Introducing myself');
+});
+
+app.get('/Aboutme-App/Intrests', function (req, res) {
+  res.send('My Intrests & Hobbies');
+});
+
+app.get('/Aboutme-App/Plans', function (req, res) {
+  res.send('My Future Plans');
+});
+
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
 app.listen(8080, function () {
   console.log(`IMAD course app listening on port ${port}!`);
