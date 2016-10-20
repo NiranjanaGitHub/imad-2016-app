@@ -25,6 +25,47 @@ app.get('/Aboutme-App/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'Aboutme-App', 'style.css'));
 });
 
+// Creating a series of objects to store those contents which are differing in each of the HTML document in Aboutme-App:
+var intro =
+{
+    title: 'About Me',
+    heading: 'Introduction',
+    tagline: 'Hi Everyone !!! Let me introduce myself',
+    contents: 
+    `<h3> Intro: </h3>
+                <p> My name is Niranjana. I am from Chennai. I did my schooling at PSBB and college at Meenakshi Sundararajan Engineering College in Electrical and Electronics Engineering. In my final year I got placed in Tata Consultancy Services as a Software Developer. I got trained in UNIX,C/C++ and Mainframe. I have 3.5 years of experience at TCS in Mainframe technology. I had a great learning experience and each of the projects I worked where very challenging and improved my knowledge. I all looking forward for learning new technologies and gaining new skills.
+                </p>
+                <h3> Family: </h3>
+                <p> My father's name is Venkatakrishnan and mother's name is Rajarajeswari. I have an eleder brother, Subramanian who is a Charted account. During the weekends we all make it a habit to dine and spend time together. As we live in a flat, I have a lot of friends in my apartment and we have a good time during the weekends and holidays.
+                </p>`
+};
+
+// Creating a common HTML Template:
+var htmlTemplate = `
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title> ${title} </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="/Aboutme-App/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="container">
+            <div>
+            <a href="/Aboutme-App/Index">Home Page</a>
+            </div>
+            <hr/>
+                <h1> ${heading} </h1>
+            <div>
+                <h2> ${tagline} </h2>    
+            </div>
+            <div>
+                ${contents}
+            </div>
+        </div>
+    </body>
+</html>`;
+
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
 app.listen(8080, function () {
   console.log(`IMAD course app listening on port ${port}!`);
