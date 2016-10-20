@@ -41,7 +41,7 @@ app.get('/Aboutme-App/Plans', function (req, res) {
 */
 
 var counter = 0;
-app.get('/Aboutme/counter', function (req, res) {
+app.get('/Aboutme-App/counter', function (req, res) {
   counter = counter + 1;    
   res.send(counter.toString());
 });
