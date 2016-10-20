@@ -10,7 +10,7 @@ app.get('/Aboutme-App/index.html', function (req, res) {
 });
 
 app.get('/Aboutme-App/Intro', function (req, res) {
-  res.send('Introducing myself');
+  res.sendFile(path.join(__dirname, 'Aboutme-App', 'intro.html'));
 });
 
 app.get('/Aboutme-App/Interests', function (req, res) {
@@ -25,6 +25,19 @@ var port = 8080; // Use 8080 for local development because you might already hav
 app.listen(8080, function () {
   console.log(`IMAD course app listening on port ${port}!`);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* IMAD Practise:
    -------------
