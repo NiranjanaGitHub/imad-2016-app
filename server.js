@@ -9,12 +9,16 @@ app.get('/Aboutme-App/Index', function (req, res) {
   res.sendFile(path.join(__dirname, 'Aboutme-App', 'index.html'));
 });
 
+app.get('/Aboutme-App/style.css', function (req, res) {
+  res.sendFile(path.join(__dirname, 'Aboutme-App', 'style.css'));
+});
+
 app.get('/:aboutmename', function (req, res) {
   var aboutmename = req.params.aboutmename;            // Extract the name.
   res.send(createTemplate(aboutmeapp[aboutmename]));   // Index it in aboutmeapp object.
 });
 
-/*
+/* Automated the below URL mapping as above:
 app.get('/Aboutme-App/Intro', function (req, res) {
   res.send(createTemplate(intro));
 });
@@ -27,10 +31,6 @@ app.get('/Aboutme-App/Plans', function (req, res) {
   res.sendFile(path.join(__dirname, 'Aboutme-App', 'plans.html'));
 });
 */
-
-app.get('/Aboutme-App/style.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'Aboutme-App', 'style.css'));
-});
 
 // Creating an object aboutme containing intro, hobbies and plans.
 // Creating a series of objects to store those contents which are differing in each of the HTML document in Aboutme-App:
