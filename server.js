@@ -9,9 +9,9 @@ app.get('/Aboutme-App/Index', function (req, res) {
   res.sendFile(path.join(__dirname, 'Aboutme-App', 'index.html'));
 });
 
-app.get('/:aboutmename', function (req, res) {
-  var aboutmename = req.params.aboutmename;            // Extract the name.
-  res.send(createTemplate(aboutmeapp[aboutmename]));   // Index it in aboutmeapp object.
+app.get('/:aboutmeName', function (req, res) {
+  var aboutmeName = req.params.aboutmeName;            // Extract the name.
+  res.send(createTemplate(aboutme[aboutmeName]));   // Index it in aboutmeapp object.
 });
 
 /*
@@ -35,7 +35,7 @@ app.get('/Aboutme-App/style.css', function (req, res) {
 // Creating an object aboutme containing intro, hobbies and plans.
 // Creating a series of objects to store those contents which are differing in each of the HTML document in Aboutme-App:
 
-var aboutmeapp = {
+var aboutme = {
     'aboutme-intro': {
         title: 'About Me',
         heading: 'Introduction',
