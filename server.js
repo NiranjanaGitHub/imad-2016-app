@@ -36,7 +36,7 @@ app.get('/Aboutme-App/style.css', function (req, res) {
 // Creating a series of objects to store those contents which are differing in each of the HTML document in Aboutme-App:
 
 var aboutmeapp = {
-    'aboutme-intro' : {
+    'aboutme-intro': {
         title: 'About Me',
         heading: 'Introduction',
         tagline: 'Hi Everyone !!! Let me introduce myself',
@@ -48,7 +48,7 @@ var aboutmeapp = {
                     <p> My father's name is Venkatakrishnan and mother's name is Rajarajeswari. I have an eleder brother, Subramanian who is a Charted account. During the weekends we all make it a habit to dine and spend time together. As we live in a flat, I have a lot of friends in my apartment and we have a good time during the weekends and holidays.
                     </p>`
     },
-    'aboutme-hobbies' : {
+    'aboutme-hobbies': {
         title: 'Interests & Hobbies',
         heading: 'Interests & Hobbies',
         tagline: 'Let me share my Interests & Hobbies',
@@ -80,7 +80,7 @@ var aboutmeapp = {
                         <dd> Quilling and other paper work</dd>
                     </dl>`
     },
-    'aboutme-plans'   : {
+    'aboutme-plans': {
         title: 'Future Plans',
         heading: 'My Plans for the future',
         tagline: 'Let me share my future aspirations:',
