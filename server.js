@@ -10,7 +10,7 @@ app.get('/Aboutme-App/Index', function (req, res) {
 });
 
 app.get('/Aboutme-App/Intro', function (req, res) {
-  res.sendFile(path.join(__dirname, 'Aboutme-App', 'intro.html'));
+  res.send(createTemplate(intro));
 });
 
 app.get('/Aboutme-App/Hobbies', function (req, res) {
@@ -40,31 +40,41 @@ var intro =
                 </p>`
 };
 
-// Creating a common HTML Template:
-var htmlTemplate = `
-<!DOCTYPE HTML>
-<html>
-    <head>
-        <title> ${title} </title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link href="/Aboutme-App/style.css" rel="stylesheet" />
-    </head>
-    <body>
-        <div class="container">
-            <div>
-            <a href="/Aboutme-App/Index">Home Page</a>
+// Creating a common htmlTemplate & Create a function createTemplate with data object and create the variables:
+
+function createTemplate(data)
+{
+    var title = data.title;
+    var heading = data.heading;
+    var tagline = data.tagline;
+    var content = data.content;
+    
+    var htmlTemplate = `
+    <!DOCTYPE HTML>
+    <html>
+        <head>
+            <title> ${title} </title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <link href="/Aboutme-App/style.css" rel="stylesheet" />
+        </head>
+        <body>
+            <div class="container">
+                <div>
+                <a href="/Aboutme-App/Index">Home Page</a>
+                </div>
+                <hr/>
+                    <h1> ${heading} </h1>
+                <div>
+                    <h2> ${tagline} </h2>    
+                </div>
+                <div>
+                    ${contents}
+                </div>
             </div>
-            <hr/>
-                <h1> ${heading} </h1>
-            <div>
-                <h2> ${tagline} </h2>    
-            </div>
-            <div>
-                ${contents}
-            </div>
-        </div>
-    </body>
-</html>`;
+        </body>
+    </html>`;
+    return htmlTemplate;
+}
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
 app.listen(8080, function () {
