@@ -5,6 +5,10 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
+app.get('/Aboutme-App/Text', function (req, res) {                     // ==> Text Response
+  res.send('This is a Text Reponse');
+});
+
 app.get('/Aboutme-App/Index', function (req, res) {
   res.sendFile(path.join(__dirname, 'Aboutme-App', 'index.html'));     // ==> HTML Response
 });
@@ -29,10 +33,6 @@ app.get('/Aboutme-App/Hobbies', function (req, res) {
 
 app.get('/Aboutme-App/Plans', function (req, res) {
   res.sendFile(path.join(__dirname, 'Aboutme-App', 'plans.html'));
-});
-
-app.get('/Aboutme-App/Text', function (req, res) {                   // ==> Text Response
-  res.send('This is a Text Reponse');
 });
 */
 
