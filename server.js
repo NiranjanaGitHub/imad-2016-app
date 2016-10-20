@@ -14,7 +14,7 @@ app.get('/Aboutme-App/Intro', function (req, res) {
 });
 
 app.get('/Aboutme-App/Hobbies', function (req, res) {
-  res.sendFile(path.join(__dirname, 'Aboutme-App', 'hobbies.html')) 
+  res.sendFile(path.join(__dirname, 'Aboutme-App', 'hobbies.html'));
 });
 
 app.get('/Aboutme-App/Plans', function (req, res) {
