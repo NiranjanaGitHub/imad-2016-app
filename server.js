@@ -6,11 +6,11 @@ var app = express();
 app.use(morgan('combined'));
 
 app.get('/Aboutme-App/Index', function (req, res) {
-  res.sendFile(path.join(__dirname, 'Aboutme-App', 'index.html'));
+  res.sendFile(path.join(__dirname, 'Aboutme-App', 'index.html'));     // ==> HTML Response
 });
 
 app.get('/Aboutme-App/style.css', function (req, res) {
-  res.sendFile(path.join(__dirname, 'Aboutme-App', 'style.css'));
+  res.sendFile(path.join(__dirname, 'Aboutme-App', 'style.css'));     // ==> CSS Response
 });
 
 app.get('/:aboutmename', function (req, res) {
@@ -29,6 +29,10 @@ app.get('/Aboutme-App/Hobbies', function (req, res) {
 
 app.get('/Aboutme-App/Plans', function (req, res) {
   res.sendFile(path.join(__dirname, 'Aboutme-App', 'plans.html'));
+});
+
+app.get('/Aboutme-App/Text', function (req, res) {                   // ==> Text Response
+  res.send('This is a Text Reponse');
 });
 */
 
