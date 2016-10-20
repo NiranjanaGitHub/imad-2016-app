@@ -9,6 +9,12 @@ app.get('/Aboutme-App/Index', function (req, res) {
   res.sendFile(path.join(__dirname, 'Aboutme-App', 'index.html'));
 });
 
+app.get('/:aboutmename', function (req, res) {
+  var aboutmename = req.params.aboutmename;            // Extract the name.
+  res.send(createTemplate(aboutmeapp[aboutmename]));   // Index it in aboutmeapp object.
+});
+
+/*
 app.get('/Aboutme-App/Intro', function (req, res) {
   res.send(createTemplate(intro));
 });
@@ -20,6 +26,7 @@ app.get('/Aboutme-App/Hobbies', function (req, res) {
 app.get('/Aboutme-App/Plans', function (req, res) {
   res.sendFile(path.join(__dirname, 'Aboutme-App', 'plans.html'));
 });
+*/
 
 app.get('/Aboutme-App/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'Aboutme-App', 'style.css'));
@@ -28,8 +35,8 @@ app.get('/Aboutme-App/style.css', function (req, res) {
 // Creating an object aboutme containing intro, hobbies and plans.
 // Creating a series of objects to store those contents which are differing in each of the HTML document in Aboutme-App:
 
-var aboutme = {
-    intro   : {
+var aboutmeapp = {
+    'aboutme-intro'   : {
         title: 'About Me',
         heading: 'Introduction',
         tagline: 'Hi Everyone !!! Let me introduce myself',
@@ -41,7 +48,7 @@ var aboutme = {
                     <p> My father's name is Venkatakrishnan and mother's name is Rajarajeswari. I have an eleder brother, Subramanian who is a Charted account. During the weekends we all make it a habit to dine and spend time together. As we live in a flat, I have a lot of friends in my apartment and we have a good time during the weekends and holidays.
                     </p>`
     },
-    hobbies : {
+    'aboutme-hobbies' : {
         title: 'Interests & Hobbies',
         heading: 'Interests & Hobbies',
         tagline: 'Let me share my Interests & Hobbies',
@@ -73,7 +80,7 @@ var aboutme = {
                         <dd> Quilling and other paper work</dd>
                     </dl>`
     },
-    plans   : {
+    'aboutme-plans'   : {
         title: 'Future Plans',
         heading: 'My Plans for the future',
         tagline: 'Let me share my future aspirations:',
