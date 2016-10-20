@@ -18,7 +18,7 @@ app.get('/Aboutme-App/Hobbies', function (req, res) {
 });
 
 app.get('/Aboutme-App/Plans', function (req, res) {
-  res.sendFile(path.join(_dirname, 'Aboutme-App', 'intro.html'));
+  res.sendFile(path.join(__dirname, 'Aboutme-App', 'plans.html'));
 });
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
