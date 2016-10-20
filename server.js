@@ -1,3 +1,4 @@
+/*
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
@@ -148,7 +149,7 @@ app.listen(8080, function () {
 
 
 
-/* IMAD Practise:
+ IMAD Practise:
    -------------
 var articles = 
 {
