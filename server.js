@@ -17,10 +17,6 @@ app.get('/Aboutme-App/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'Aboutme-App', 'style.css'));     // ==> CSS Response
 });
 
-app.get('/Aboutme-App/main.js', function (req, res) {
-  res.sendFile(path.join(__dirname, 'Aboutme-App', 'main.js'));      // ==> Client Side Javascript
-});
-
 app.get('/:aboutmename', function (req, res) {
   var aboutmename = req.params.aboutmename;            // Extract the name.
   res.send(createTemplate(aboutmeapp[aboutmename]));   // Index it in aboutmeapp object.
@@ -39,6 +35,10 @@ app.get('/Aboutme-App/Plans', function (req, res) {
   res.sendFile(path.join(__dirname, 'Aboutme-App', 'plans.html'));
 });
 */
+
+app.get('/Aboutme-App/main.js', function (req, res) {
+  res.sendFile(path.join(__dirname, 'Aboutme-App', 'main.js'));      // ==> Client Side Javascript
+});
 
 var counter = 0;
 app.get('/Aboutme-App/counter', function (req, res) {
