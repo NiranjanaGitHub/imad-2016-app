@@ -59,20 +59,20 @@ request.open('GET','http://niranjanagithub.imad.hasura-app.io/Aboutme-App/counte
 request.send(null);
 };
 
-//Code to enter name and display all the names that have been submited so far:
+//Code to enter comments and display all the comments that have been submited so far:
 
-var nameInput = document.getElementById('name');
-var name = nameInput.value;
+var commentInput = document.getElementById('comment');
+var comment = commentInput.value;
 var submit = document.getElementById('submit_btn');
 
 submit.onclick = function()
 {
-var names =['name1','name2','name3','name4','name5'];   //displaying the list of names in
+var comments =['name1','name2','name3','name4','name5']; //displaying the list of comments in
 var list ='';                                           // the form of an unordered list.
-for (var i=0; i < names.length; i++)
+for (var i=0; i < comments.length; i++)
 {
-    list += '<li>' + names[i] + '</li>';
+    list += '<li>' + comments[i] + '</li>';
 }
-var ul = document.getElementById('nameList');
+var ul = document.getElementById('commentList');
 ul.innerHTML = list;
 };
