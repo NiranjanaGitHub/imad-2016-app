@@ -33,9 +33,11 @@ html
     font-family: Comic Sans MS;
     padding-left:20px;
     padding-right:20px;
+    color:white;
 }
 
 .footer
 {
     font-family: Comic Sans MS;
+    color:white;
 }
