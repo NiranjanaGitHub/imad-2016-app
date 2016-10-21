@@ -49,7 +49,7 @@ button.onclick = function()
             {
                 var counter = request.responseText;         // Take the response and put it in the counter variable.
                 var span = document.getElementById('count');
-                span.innerHTMl = counter.toString();
+                span.innerHTML = counter.toString();
             }
         }
     };
