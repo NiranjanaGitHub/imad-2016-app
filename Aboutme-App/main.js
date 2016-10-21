@@ -86,8 +86,8 @@ submit.onclick = function()
     };
 
 // 2. Make a request:
-request.open('GET','http://niranjanagithub.imad.hasura-app.io/Aboutme-App/Submit-Comments?comment=' + comment,true);
-request.send(null);
 var commentInput = document.getElementById('comment');
 var comment = commentInput.value;
+request.open('GET','http://niranjanagithub.imad.hasura-app.io/Aboutme-App/Submit-Comments?comment=' + comment,true);
+request.send(null);
 };
