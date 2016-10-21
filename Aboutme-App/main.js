@@ -1,3 +1,4 @@
+// To display contents in the log:
 console.log('Loaded!'); 
 
 //Code to the move the click Button image by 100px using onclick command:
