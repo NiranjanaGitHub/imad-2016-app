@@ -28,7 +28,7 @@ app.get('/Submit-Comments/:comment', function (req, res) {
 
 //Using Query String to display the comments in the URL /Submit-Comments
 var comments = [];
-app.get('/Submit-Comments', function (req, res) {            
+app.get('/Aboutme-App/Submit-Comments', function (req, res) {            
   var comment = req.query.comment;
   comments.push(comment);
   res.send(JSON.stringify(comments));   
