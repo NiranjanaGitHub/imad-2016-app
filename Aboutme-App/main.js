@@ -23,9 +23,9 @@ click.onclick = function()
 }
 */
 
-//Code to increment the counter when the button is clicked:
+/*Code to increment the counter when the button is clicked:
 
-var counter = 1;
+var counter = 0;
 var button = document.getElementById('counter');
 button.onclick = function () 
 {
@@ -33,3 +33,6 @@ button.onclick = function ()
     var span = document.getElementById('count');
     span.innerHTML = counter.toString();
 };
+*/
+
+//Make a request to the counter endpoint:
