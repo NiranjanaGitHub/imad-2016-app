@@ -18,7 +18,7 @@ app.get('/Aboutme-App/style.css', function (req, res) {
 });
 
 app.get('/Aboutme-App/main.js', function (req, res) {
-  res.sendFile(path.join(__dirname, 'Aboutme-App', 'main.js'));     // ==> Client Side Javascript
+  res.sendFile(path.join(__dirname, 'Aboutme-App', 'main.js'));      // ==> Client Side Javascript
 });
 
 app.get('/:aboutmename', function (req, res) {
