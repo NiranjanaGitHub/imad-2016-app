@@ -61,18 +61,33 @@ request.send(null);
 
 //Code to enter comments and display all the comments that have been submited so far:
 
-var commentInput = document.getElementById('comment');
-var comment = commentInput.value;
 var submit = document.getElementById('submit_btn');
 
 submit.onclick = function()
 {
-var comments =['name1','name2','name3','name4','name5']; //displaying the list of comments in
-var list ='';                                           // the form of an unordered list.
-for (var i=0; i < comments.length; i++)
-{
-    list += '<li>' + comments[i] + '</li>';
-}
-var ul = document.getElementById('commentList');
-ul.innerHTML = list;
+    var request = new XMLHttpRequest();                  
+    request.onreadystatechange = function () 
+    {
+        if (request.readyState === XMLHttpRequest.DONE)
+        {
+            if (request.status === 200)
+            {
+                var comments = request.responseText;
+                comments = JSON.parse(comments);
+                var list ='';                                          
+                for (var i=0; i < comments.length; i++)
+                {
+                list += '<li>' + comments[i] + '</li>';
+                }
+                var ul = document.getElementById('commentList');
+                ul.innerHTML = list;
+            }
+        }
+    };
+
+// 2. Make a request:
+request.open('GET','http://niranjanagithub.imad.hasura-app.io/Aboutme-App/Submit-Comments?comment=' + comment,true);
+request.send(null);
+var commentInput = document.getElementById('comment');
+var comment = commentInput.value;
 };
