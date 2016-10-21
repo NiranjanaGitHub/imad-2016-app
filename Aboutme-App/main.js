@@ -25,6 +25,7 @@ click.onclick = function()
 
 //Code to increment the counter when the button is clicked:
 
+var counter = 1;
 var button = document.getElementById('counter');
 button.onclick = function () 
 {
