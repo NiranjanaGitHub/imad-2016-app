@@ -58,3 +58,21 @@ button.onclick = function()
 request.open('GET','http://niranjanagithub.imad.hasura-app.io/Aboutme-App/counter',true);
 request.send(null);
 };
+
+//Code to enter name and display all the names that have been submited so far:
+
+var nameInput = document.getElementById('name');
+var name = nameInput.value;
+var submit = document.getElementById('submit_btn');
+
+submit.onclick = function()
+{
+var names =['name1','name2','name3','name4','name5'];   //displaying the list of names in
+var list ='';                                           // the form of an unordered list.
+for (var i=0; i < names.length; i++)
+{
+    list += '<li>' + names[i] + '</li>';
+}
+var ul = document.getElementById('nameList');
+ul.innerHTML = list;
+};
