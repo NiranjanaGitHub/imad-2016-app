@@ -17,6 +17,13 @@ app.get('/Aboutme-App/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'Aboutme-App', 'style.css'));     // ==> CSS Response
 });
 
+var comments = [];
+app.get('/Submit-Comments/:comment', function (req, res) {
+  var comment = req.params.comment;
+  comments.push(comment);
+  res.send(JSON.stringyfycomments);   
+});
+
 app.get('/:aboutmename', function (req, res) {
   var aboutmename = req.params.aboutmename;            // Extract the name.
   res.send(createTemplate(aboutmeapp[aboutmename]));   // Index it in aboutmeapp object.
