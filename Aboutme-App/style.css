@@ -2,9 +2,8 @@ html
 {
     font-family: Comic Sans Ms;
     margin-top: 60px;
-    background:url(https://image.freepik.com/free-vector/internet-user-s-silhouette_23-2147497532.jpg) no-repeat center center fixed;
-    width: 100%; 
-    height: 50%;
+    background:url(https://image.freepik.com/free-vector/internet-user-s-silhouette_23-2147497532.jpg);
+    background-size: cover;
 }
 
 .center 
