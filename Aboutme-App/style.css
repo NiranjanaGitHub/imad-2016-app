@@ -2,7 +2,7 @@ body
 {
     font-family: Comic Sans Ms;
     margin-top: 60px;
-    background-image:url("https://image.freepik.com/free-vector/internet-user-s-silhouette_23-2147497532.jpg");
+    background:url(https://image.freepik.com/free-vector/internet-user-s-silhouette_23-2147497532.jpg) no-repeat center center fixed;
     background-size: 100%;
 }
 
