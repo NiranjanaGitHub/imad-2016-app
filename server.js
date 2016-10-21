@@ -21,7 +21,7 @@ var comments = [];
 app.get('/Submit-Comments/:comment', function (req, res) {
   var comment = req.params.comment;
   comments.push(comment);
-  res.send(JSON.stringyfy(comments);   
+  res.send(JSON.stringyfy(comments));   
 });
 
 app.get('/:aboutmename', function (req, res) {
