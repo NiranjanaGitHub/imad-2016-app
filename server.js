@@ -3,9 +3,6 @@ var morgan = require('morgan');
 var path = require('path');
 var Pool = require('pg').Pool;
 
-var app = express();
-app.use(morgan('combined'));
-
 var config = 
 {
   user: 'niranjanagithub',
@@ -14,6 +11,9 @@ var config =
   port: '5432',
   password: process.env.DB_PASSWORD,                                  //Environment variable
 };
+
+var app = express();
+app.use(morgan('combined'));
 
 app.get('/Aboutme-App/Text', function (req, res) {                     // ==> Text Response
   res.send('This is a Text Reponse');
