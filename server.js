@@ -127,7 +127,7 @@ var aboutmeapp = {
                     </p>`
     },
     'aboutme-hobbies': {
-        date: '',
+        date: 'Oct 05,2016',
         title: 'Interests & Hobbies',
         heading: 'Interests & Hobbies',
         tagline: 'Let me share my Interests & Hobbies',
