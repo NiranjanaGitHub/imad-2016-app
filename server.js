@@ -177,6 +177,7 @@ var aboutmeapp = {
 
 function createTemplate(data)
 {
+    var date = data.date;
     var title = data.title;
     var heading = data.heading;
     var tagline = data.tagline;
@@ -194,6 +195,9 @@ function createTemplate(data)
             <div class="container">
                 <div>
                 <a href="/Aboutme-App/Index">Home Page</a>
+                </div>
+                <div>
+                    ${date}
                 </div>
                 <hr/>
                     <h1> ${heading} </h1>
