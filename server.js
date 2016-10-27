@@ -64,7 +64,7 @@ app.get('/Aboutme-App/Submit-Comments', function (req, res) {
 
 app.get('/aboutme/:aboutmename', function (req, res) {
 //var aboutmename = req.params.aboutmename;             Extract the name.
-  pool.query("SELECT * FROM intro WHERE title = " + req.params.aboutmename, function(err,result)
+  pool.query("SELECT * FROM intro WHERE title = '" + req.params.aboutmename + "'", function(err,result)
   {
      if(err)
      {
