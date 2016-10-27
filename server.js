@@ -64,7 +64,10 @@ app.get('/Aboutme-App/Submit-Comments', function (req, res) {
 
 app.get('/aboutme/:aboutmename', function (req, res) {
 //var aboutmename = req.params.aboutmename;             Extract the name.
-  pool.query("SELECT * FROM intro WHERE title = '" + req.params.aboutmename + "'", function(err,result)
+// The below command is prone to SQL injection:
+// pool.query("SELECT * FROM intro WHERE title = '" + req.params.aboutmename + "'", function(err,result)
+// to prevent from SQL injection : Insert parameters into the SQL query in a way a parameter is safe.
+pool.query("SELECT * FROM intro WHERE title = $1",[req.params.aboutmename], function(err,result)
   {
      if(err)
      {
