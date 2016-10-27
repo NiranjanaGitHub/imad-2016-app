@@ -160,7 +160,7 @@ var aboutmeapp = {
                     </dl>`
     },
     'aboutme-plans': {
-        date: '',
+        date: 'Oct 10,2016',
         title: 'Future Plans',
         heading: 'My Plans for the future',
         tagline: 'Let me share my future aspirations:',
