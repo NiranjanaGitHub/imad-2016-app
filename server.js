@@ -12,7 +12,7 @@ var config =
   database: 'niranjanagithub',
   host: 'http://db.imad.hasura-app.io/',
   port: '5432',
-  password: process.env.DB_PASSWORD                                   //Environment variable
+  password: process.env.DB_PASSWORD,                                   //Environment variable
 };
 
 app.get('/Aboutme-App/Text', function (req, res) {                     // ==> Text Response
