@@ -197,7 +197,7 @@ function createTemplate(data)
                 <a href="/Aboutme-App/Index">Home Page</a>
                 </div>
                 <div>
-                    ${date}
+                    ${date.toDateString()}
                 </div>
                 <hr/>
                     <h1> ${heading} </h1>
