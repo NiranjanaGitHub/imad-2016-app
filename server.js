@@ -1,9 +1,19 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
+var Pool = require('pg').Pool;
 
 var app = express();
 app.use(morgan('combined'));
+
+var config = 
+{
+  user: 'niranjanagithub',
+  database: 'niranjanagithub',
+  host: 'db.imad.hasura-app.io/',
+  port: '5432',
+  password: process.env.DB_PASSWORD                                   //Environment variable
+};
 
 app.get('/Aboutme-App/Text', function (req, res) {                     // ==> Text Response
   res.send('This is a Text Reponse');
@@ -16,6 +26,23 @@ app.get('/Aboutme-App/Index', function (req, res) {
 app.get('/Aboutme-App/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'Aboutme-App', 'style.css'));     // ==> CSS Response
 });
+
+var pool = new Pool(config);     // Connection Pool is set up as soon as the app is started.
+app.get('/test_db', function (req,res) 
+{
+    pool.query('SELECT * FROM test_db', function(err,result) 
+    {
+        if(err)
+        {
+            res.status(500).send(err.toString());
+        }
+        else
+        {
+            res.send(JSON.stringify(result));
+        }
+    });
+});
+
 
 /* Using Key matching to display the comments in the URL /Submit-Comments
 var comments = [];
