@@ -114,7 +114,7 @@ app.get('/Aboutme-App/counter', function (req, res) {
 
 var aboutmeapp = {
     'aboutme-intro': {
-        date: '',
+        date: 'Oct 01,2016',
         title: 'About Me',
         heading: 'Introduction',
         tagline: 'Hi Everyone !!! Let me introduce myself',
