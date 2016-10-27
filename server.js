@@ -62,9 +62,27 @@ app.get('/Aboutme-App/Submit-Comments', function (req, res) {
 });
 
 
-app.get('/:aboutmename', function (req, res) {
-  var aboutmename = req.params.aboutmename;            // Extract the name.
-  res.send(createTemplate(aboutmeapp[aboutmename]));   // Index it in aboutmeapp object.
+app.get('/aboutme/:aboutmename', function (req, res) {
+//var aboutmename = req.params.aboutmename;             Extract the name.
+  pool.query("SELECT * FROM intro WHERE title = " + req.params.aboutmename, function(err,result)
+  {
+     if(err)
+     {
+         res.status(500).send(err.toString());
+     }
+     else
+     {
+         if(result.rows.length === 0)
+         {
+             res.status(404).send('Introduction Page not found');
+         }
+         else
+         {
+             var aboutmeData = result.rows[0];
+             res.send(createTemplate(aboutmeData));
+         }
+     }
+  });
 });
 
 /* Automated the below URL mapping as above:
@@ -96,6 +114,7 @@ app.get('/Aboutme-App/counter', function (req, res) {
 
 var aboutmeapp = {
     'aboutme-intro': {
+        date: '',
         title: 'About Me',
         heading: 'Introduction',
         tagline: 'Hi Everyone !!! Let me introduce myself',
@@ -108,6 +127,7 @@ var aboutmeapp = {
                     </p>`
     },
     'aboutme-hobbies': {
+        date: '',
         title: 'Interests & Hobbies',
         heading: 'Interests & Hobbies',
         tagline: 'Let me share my Interests & Hobbies',
@@ -140,6 +160,7 @@ var aboutmeapp = {
                     </dl>`
     },
     'aboutme-plans': {
+        date: '',
         title: 'Future Plans',
         heading: 'My Plans for the future',
         tagline: 'Let me share my future aspirations:',
